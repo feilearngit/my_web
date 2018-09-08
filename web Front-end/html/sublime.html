@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+	h1 {color: red}
+	p {color: blue}
+</style>
+	<title>First Page</title>
+</head>
+<body bgcolor="yellow">
+	<h1 align="center">This is my first page</h1>
+	<h2>This is my first page</h2>
+	<p>This is my first paragraph.</p>
+	<p>This is another paragraph.</p>
+
+	<a href="http://www.w3school.com.cn">This is a link</a>
+
+	<img src="/Users/apple/Documents/WechatIMG105.jpeg" width="200" height="180">
+
+	<table border="1"></table>
+	<!-- This is a comment -->
+	<hr />
+
+	<p>This is <br />a para<br />graph with line breaks</p>
+
+
+	<h1 align="center" style="background-color:red">春晓</h1>
+	<p align="center" style="background-color:green">春眠不觉晓，<br />
+			处处闻啼鸟。<br />
+				夜来风雨声，<br />
+					花落知多少。<br />
+	</p>
+
+	<h1 style="font-family:verdana"> A heading</h1>
+	<p style="font-family:arial;color:red;font-size:20px;">A paragraph.</p>
+
+	<h1 style="text-align:center">This is a heading</h1>
+	<p>The heading above is aligned to the center of this page.</p>
+
+	<p><b>This text is bold</b></p>
+	<p><strong>This text is strong</strong></p>
+	<p><big>This text is big</big></p>
+	<p><em>This text is emphasized</em></p>
+	<p><i>This text is italic</i></p>
+	<p><small>This text is small</small></p>
+	<p><u>This text is underline</u></p>
+	<p><del>This text is delete</del> <ins>This text is insert</ins></p>
+
+	<pre>
+		这是
+		预格式文本。
+		它保留了      空格
+		和换行。
+	</pre>
+	<p>pre 标签很适合显示计算机代码：</p>
+	<pre>
+		for i = 1 to 10
+			print i
+		next i
+	</pre>
+
+	<code>Computer code</code>
+	<br />
+	<kbd>Keyboard input</kbd>
+	<br />
+	<tt>Teletype text</tt>
+	<br />
+	<samp>Sample text</samp>
+	<br />
+	<var>Computer variable</var>
+	<br />
+
+	<p>
+	<b>注释：</b>这些标签常用于显示计算机/编程代码。
+	</p>
+
+	<address>
+		Written by <a href="mailto:mr_j8080@163.com"> Mr.Joker </a>.<br>
+		Visit us at:<br>
+		Example.com<br>
+		Box 564, Disneyland<br>
+		USA
+	</address>
+
+	<abbr title="etcetera">etc.</abbr>
+	<br />
+	<acronym title="World Wide Web">WWW</acronym>
+
+	<p>
+	如果您的浏览器支持 bi-directional override (bdo)，下一行会从右向左输出 (rtl)；
+	</p>
+
+	<bdo dir="rtl"> <!--rigth to left-->
+		Here is some Hebrew text
+	</bdo>
+
+	这是长引用：
+	<blockquote>
+		这是长引用，这是长引用，这是长引用，这是长引用，这是长引用，这是长引用，这是长引用，这是长引用，这是长引用，这是长引用，这是长引用，这是长引用。
+	</blockquote>
+
+
+	<p>Coding Example:</p>
+
+	<code>
+	<pre>
+	var person = {
+	    firstName:"Bill",
+	    lastName:"Gates",
+	    age:50,
+	    eyeColor:"blue"
+	}
+	</pre>
+	</code>
+
+	<p>Einstein wrote:</p>
+	<p><var>E = m c<sup>2</sup></var></p>
+
+	<!--[if IE 8]>
+    .... some HTML here ....
+	<![endif]-->
+
+	<!--使用Target属性，你可以定义被链接的文档在何处显示 -->
+	<!--target="_bland" 会在新窗口打开 -->
+
+	<a href="http://www.w3school.com.cn/" target="_blank">Visit W3School!</a>
+
+	<table border="1" bgcolor="green">
+		<tr>
+			<th>Heading</th>
+			<th>Another Heading</th>
+		</tr>
+		<tr>
+			<td>row 1, cell 1</td>
+			<td>row 1, cell 2</td>
+		</tr>
+		<tr>
+			<td>row 2, cell 1</td>
+			<td>row 2, cell 2</td>
+
+		</tr>
+	</table>
+
+	<h4>横跨两列的单元格</h4>
+	<table border="1" bgcolor="red">
+		<caption>通讯录</caption>
+		<thead>页眉</thead>
+		<tfoot>页脚</tfoot>
+		<tr>
+			<th>姓名</th>
+			<th colspan="2">电话</th>
+		</tr>	
+		<tr>
+			<td>Mr_Joker</td>
+			<td>5651692</td>
+			<td>5651693</td>
+		</tr>
+	</table>
+	<h4>纵跨两行的单元格</h4>
+		<table border="1" bgcolor="pink">
+			<tr>
+				<th>姓名</th>
+				<td>mr_joker</td>
+			</tr>
+			<tr>
+				<th rowspan="2">电话</th>
+				<td>5651692</td>
+			</tr>
+			<tr>
+				<td>5651693</td>
+			</tr>
+		</table>
+
+	<h4>表格内标签</h4>
+	<table border="1" cellspacing="10">
+		<tr>
+			<td>
+				<p>这是一个段落</p>
+				<p>This is another paragraph.</p>
+			</td>
+
+			<td>
+				这个单元包含一个表格：
+				<table border="1" cellpadding="10" cellspacing="10">
+					<tr>
+						<td bgcolor="green">A</td>
+						<td>B</td>
+					</tr>
+				</table>
+				
+			</td>			
+		</tr>
+
+		<tr>
+			
+			<td align="right">
+				这个单元包含一个列表:
+				<ul>
+					<li>apple</li>
+					<li>banana</li>
+					<li>pineapple</li>
+				</ul>
+				
+			</td>
+			<td>
+				HELLO
+			</td>
+		</tr>
+
+	</table>
+
+	<p><b>notice:</b>frame could not use in IE</p>
+	<table frame="box">
+		<tr>
+			<th>Month</th>
+			<th>Saving</th>
+		</tr>
+		<tr>
+			<td>January</td>
+			<td>$100</td>
+		</tr>
+	</table>
+
+	<p>Table with frame="above"</p>
+	<table frame="above">
+		<tr>
+			<th>Month</th>
+			<th>Saving</th>
+		</tr>
+		<tr>
+			<td>January</td>
+			<td>$100</td>
+		</tr>
+	</table>
+
+	<p>Table with frame="below":</p>
+<table frame="below">
+  <tr>
+    <th>Month</th>
+    <th>Savings</th>
+  </tr>
+  <tr>
+    <td>January</td>
+    <td>$100</td>
+  </tr>
+</table>
+
+<p>Table with frame="hsides":</p>
+<table frame="hsides">
+  <tr>
+    <th>Month</th>
+    <th>Savings</th>
+  </tr>
+  <tr>
+    <td>January</td>
+    <td>$100</td>
+  </tr>
+</table>
+
+<p>Table with frame="vsides":</p>
+<table frame="vsides">
+  <tr>
+    <th>Month</th>
+    <th>Savings</th>
+  </tr>
+  <tr>
+    <td>January</td>
+    <td>$100</td>
+  </tr>
+</table>
+
+
+<ol>
+	<li>caffee</li>
+	<li>milk</li>
+	<li>tea</li>
+</ol>
+
+<ol start="40">
+	<li>coffee</li>
+	<li>milk</li>
+	<li>tea</li>
+</ol>
+
+<h4>Disc 项目符号列表：</h4>
+<ul type="disc">
+ <li>苹果</li>
+ <li>香蕉</li>
+ <li>柠檬</li>
+ <li>桔子</li>
+</ul>  
+
+<h4>Circle 项目符号列表：</h4>
+<ul type="circle">
+ <li>苹果</li>
+ <li>香蕉</li>
+ <li>柠檬</li>
+ <li>桔子</li>
+</ul>  
+
+<h4>Square 项目符号列表：</h4>
+<ul type="square">
+ <li>苹果</li>
+ <li>香蕉</li>
+ <li>柠檬</li>
+ <li>桔子</li>
+</ul>  
+
+<h4>数字列表：</h4>
+<ol>
+ <li>苹果</li>
+ <li>香蕉</li>
+ <li>柠檬</li>
+ <li>桔子</li>
+</ol>  
+
+<h4>字母列表：</h4>
+<ol type="A">
+ <li>苹果</li>
+ <li>香蕉</li>
+ <li>柠檬</li>
+ <li>桔子</li>
+</ol>  
+
+<h4>小写字母列表：</h4>
+<ol type="a">
+ <li>苹果</li>
+ <li>香蕉</li>
+ <li>柠檬</li>
+ <li>桔子</li>
+</ol>  
+
+<h4>罗马字母列表：</h4>
+<ol type="I">
+ <li>苹果</li>
+ <li>香蕉</li>
+ <li>柠檬</li>
+ <li>桔子</li>
+</ol>  
+
+<h4>小写罗马字母列表：</h4>
+<ol type="i">
+ <li>苹果</li>
+ <li>香蕉</li>
+ <li>柠檬</li>
+ <li>桔子</li>
+</ol>  
+
+<h4>一个嵌套列表：</h4>
+<ul>
+  <li>咖啡</li>
+  <li>茶
+    <ul>
+    <li>红茶</li>
+    <li>绿茶</li>
+    </ul>
+  </li>
+  <li>牛奶</li>
+</ul>
+
+<dl>
+   <dt>计算机</dt>
+   <dd>用来计算的仪器 ... ...</dd>
+   <dt>显示器</dt>
+   <dd>以视觉方式显示信息的装置 ... ...</dd>
+</dl>
+
+
+
+
+</body>
+</html>
