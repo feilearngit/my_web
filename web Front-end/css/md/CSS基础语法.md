@@ -310,7 +310,7 @@ input[type="button"]
 
 
 
-   ---
+---
 
 
 
@@ -437,7 +437,7 @@ Background-attachment属性的默认值是scroll。
 
 ---
 
-### 缩进文本
+#### 缩进文本
 
 第一行进行缩进，CSS提供了 <u>text-indent属性</u>
 
@@ -454,4 +454,533 @@ p{text-indent:5em;}
 ```css
 p{text-indent:-5em; padding-left:5em;}
 ```
+
+#### 使用百分比值
+
+text-indent 可以使用所有长度单位，包括百分比值。
+
+```css
+div{width: 400px;}
+p {text-indent: 20%;}
+
+<div>
+<p> this is a paragraph.</p>
+</div>
+```
+
+#### 继承
+
+text-indent属性可以继承。
+
+```css
+div#outer {width: 500px;}
+div#inner {text-indent: 10%;}
+p {width: 200px;}
+
+<div id = "outer">
+<div id = "inner">some text. some text. some text.
+<p>this is a paragraph.</p>
+</div>
+</div>
+```
+
+#### 水平对齐
+
+<u>text-align</u>是一个基本的属性，他会影响一个元素中的文本行互相之间的对齐方式。前三个值相当直接。
+
+值left、right和center会导致元素中的文本分别左对齐，右对齐和居中。
+
+==西方语言从左向右，希伯来语和阿拉伯语从右向左==
+
+**text-align:center与<CENTER>**
+
+**<CENTER>**不但影响文本，还会把整个元素居中。text-align不会控制元素的对齐，只影响内部内容。元素本身不会从一段移动到另一端，只是其中的文本受影响。
+
+**justify**
+
+最后一个水平对齐属性是justify。使文本两头对齐。
+
+#### 字间隔
+
+<u>word-spacing属性</u>可以改变字（单词）之间的间隔。默认值normal与0是一样的。
+
+```css
+p.spread {word-spacing: 30px;}
+p.tight {word-spacing: -0.5em;}
+
+<p class = "spread">
+This is a paragraph. The spaces between words will be increased.
+</p>
+
+<p class = "tight">
+This is a paragraoh. The spaces between words will be decreased.
+</p>
+```
+
+#### 字母间隔
+
+<u>letter-spacing属性</u>与word-spacing的区别：字母间隔修改的是字符或者字母之间的间隔。
+
+```css
+h1 {letter-spacing: -0.5em}
+h4 {letter-spacing: 20px}
+
+<h1>This is header 1</h1>
+<h4>This is header 4</h4>
+```
+
+#### 字符转换
+
+<u>text-transform属性</u>处理文本的大小写
+
+- none
+- uppercase
+- lowercase
+- capitalize
+
+默认值none对文本不做改动。uppercase和lowercase将文本转换为全大写和全小写字符。最后，capitalize只对每个单词的首字母大写。
+
+```css
+h1 {text-transform: uppercase}
+```
+
+```html
+<html>
+
+<head>
+<style type="text/css">
+  h1 {text-transform: uppercase}
+  p.uppercase {text-transform: uppercase}
+  p.lowercase {text-transform: lowercase}
+  p.capitalize {text-transform: capitalize}
+</style>
+</head>
+
+<body>
+<h1>This Is An H1 Element</h1>
+<p class="uppercase">This is some text in a paragraph.</p>
+<p class="lowercase">This is some text in a paragraph.</p>
+<p class="capitalize">This is some text in a paragraph.</p>
+</body>
+
+</html>
+```
+
+#### 文本装饰
+
+<u>text-decration</u>
+
+- none
+- underline
+- overline
+- line-through
+- blink
+
+#### 处理空白符
+
+<u>white-space</u>
+
+```css
+p {white-space: normal;}
+<p>
+This      paragraph has    
+many space   in     it.
+</p>
+```
+
+- normal    忽略空白符
+- pre          空白符不会被忽略
+- nowrap   防止换行
+- pre-line   空白符忽略，允许换行
+- pre-wrap  空白符不被忽略，允许换行
+
+#### 文本方向
+
+<u>derection</u>
+
+ltr和rtl，默认ltr
+
+## CSS字体
+
+除了各种特定的字体系列外，CSS 定义了 5 种通用字体系列：
+
+- Serif 字体
+- Sans-serif 字体
+- Monospace 字体
+- Cursive 字体
+- Fantasy 字体
+
+使用一种sans-serif字体，不关心是哪一种字体
+
+```css
+body {font-family: sans-serif;}
+```
+
+指定字体：
+
+```css
+h1 {font-family: Georgia;}
+```
+
+没有安装Georgia字体
+
+```css
+h1 {font-family: Georgia, serif;}
+```
+
+如果您对字体非常熟悉，也可以为给定的元素指定一系列类似的字体。要做到这一点，需要把这些字体按照优先顺序排列，然后用逗号进行连接：
+
+```css
+p {font-family: Times, TimesNR, 'New Century Schoolbook',Georgia, 'New York', serif;}
+```
+
+#### 使用引号
+
+只有当字体名中有一个或多个空格（比如New York），或者如果字体名包括#或$之类的符号，才需要在font-family声明中加引号。
+
+单引号或双引号都可以接受。但是，如果把一个 font-family 属性放在 HTML 的 style 属性中，则需要使用该属性本身未使用的那种引号：
+
+```css
+<p style="font-family: Times, TimesNR, 'New Century Schoolbook', Georgia,'New York', serif;">...</p>
+```
+
+#### 字体风格
+
+<u>font-style</u>最常用于规定斜体文本
+
+- normal - 文本正常显示
+- italic - 文本斜体显示
+- oblique - 文本倾斜显示
+
+斜体（italic）是一种简单的字体风格，对每个字母的结构有一些小改动，来反映变化的外观。与此不同，倾斜（oblique）文本则是正常竖直文本的一个倾斜版本。
+
+通常情况下，italic 和 oblique 文本在 web 浏览器中看上去完全一样。
+
+#### 字体变形
+
+<u>font-variant</u>设定小型大写字母
+
+```css
+p {font-variant: small-caps;}
+```
+
+#### 字体加粗
+
+<u>font-weight</u>设置文本的粗细
+
+100 ~ 900 设置9级加粗度，400等价于normal，700等价于bold。
+
+```css
+p.normal {font-weigth: normal;}
+p.thick {font-weigth: bold;}
+p.thicker {font-weight: 900;}
+```
+
+#### 字体大小
+
+<u>font-size</u>
+
+值可以是绝对或者相对
+
+绝对值：
+
+- 将文本设置为指定的大小
+- 不允许用户在所有的浏览器中改变文本的大小（不利于可用性）
+- 绝对大小在确定了输出的物理尺寸时很有用
+
+相对大小：
+
+- 相对于周围的元素来设置大小
+- 允许用户在浏览器改变文本大小
+
+**注意**：如果没有规定字体大小，普通文本的默认大小是16像素（1em）
+
+```css
+h1 {font-size: 60px;}
+h2 {font-size: 40px;}
+p {font-size: 14px;}
+```
+
+（注：16 等于父元素的默认字体大小，假设父元素的 font-size 为 20px，那么公式需改为：*pixels*/20=*em*）
+
+```css
+h1 {font-size:3.75em;} /* 60px/16=3.75em */
+h2 {font-size:2.5em;}  /* 40px/16=2.5em */
+p {font-size:0.875em;} /* 14px/16=0.875em */
+```
+
+**结合使用百分比和EM**
+
+在所有浏览器中均有效的方案是为 body 元素（父元素）以百分比设置默认的 font-size 值：
+
+```css
+body {font-size:100%;}
+h1 {font-size:3.75em;}
+h2 {font-size:2.5em;}
+p {font-size:0.875em;}
+```
+
+## CSS链接
+
+#### 设置链接的样式
+
+链接的特殊性在于能够根据他们所处的状态来设置他们的样式。
+
+链接的四种状态：
+
+- a:link - 普通的、未被访问的链接
+- a:visited - 用户已访问的链接
+- a:hover - 鼠标指针位于链接的上方
+- a:active - 链接被点击的时刻
+
+```css
+a:link {color: #FF0000;}      /*未被访问的链接*/
+a:visited {color: #00FF00;}	  /*已访问*/
+a:hover {color: #FF00FF;}	  /*鼠标指针移动到链接上*/
+a:active {color: #0000FF;}	  /*点击*/
+```
+
+当为链接的不同状态设置样式时，请按照以下次序规则：
+
+- a:hover 必须位于 a:link 和 a:visited 之后
+- a:active 必须位于 a:hover 之后
+
+#### 去掉下划线
+
+```css
+a:link {text-decoration:none}
+```
+
+#### 背景色
+
+```css
+a:link {background-color: #B2FF99;}
+```
+
+
+
+## CSS列表
+
+#### CSS列表属性
+
+| 属性                | 描述                       |
+| ------------------- | -------------------------- |
+| list-style          | 简写属性                   |
+| list-style-image    | 图像设置为列表项标志       |
+| list-style-position | 设置列表中列表项标志的位置 |
+| list-style-type     | 设置列表项标志的类型       |
+|                     |                            |
+
+#### CSS列表实例
+
+**所有的列表样式类型**
+
+```html
+<html>
+<head>
+<style type="text/css">
+ul.none {list-style-type: none}
+ul.disc {list-style-type: disc}
+ul.circle {list-style-type: circle}
+ul.square {list-style-type: square}
+ul.decimal {list-style-type: decimal}
+ul.decimal-leading-zero {list-style-type: decimal-leading-zero}
+ul.lower-roman {list-style-type: lower-roman}
+ul.upper-roman {list-style-type: upper-roman}
+ul.lower-alpha {list-style-type: lower-alpha}
+ul.upper-alpha {list-style-type: upper-alpha}
+ul.lower-greek {list-style-type: lower-greek}
+ul.lower-latin {list-style-type: lower-latin}
+ul.upper-latin {list-style-type: upper-latin}
+ul.hebrew {list-style-type: hebrew}
+ul.armenian {list-style-type: armenian}
+ul.georgian {list-style-type: georgian}
+ul.cjk-ideographic {list-style-type: cjk-ideographic}
+ul.hiragana {list-style-type: hiragana}
+ul.katakana {list-style-type: katakana}
+ul.hiragana-iroha {list-style-type: hiragana-iroha}
+ul.katakana-iroha {list-style-type: katakana-iroha}
+</style>
+</head>
+
+<body>
+<ul class="none">
+<li>"none" 类型</li>
+<li>茶</li>
+<li>可口可乐</li>
+</ul>
+
+<ul class="disc">
+<li>Disc 类型</li>
+<li>茶</li>
+<li>可口可乐</li>
+</ul>
+
+<ul class="circle">
+<li>Circle 类型</li>
+<li>茶</li>
+<li>可口可乐</li>
+</ul>
+
+<ul class="square">
+<li>Square 类型</li>
+<li>茶</li>
+<li>可口可乐</li>
+</ul>
+
+<ul class="decimal">
+<li>Decimal 类型</li>
+<li>茶</li>
+<li>可口可乐</li>
+</ul>
+
+<ul class="decimal-leading-zero">
+<li>Decimal-leading-zero 类型</li>
+<li>茶</li>
+<li>可口可乐</li>
+</ul>
+
+<ul class="lower-roman">
+<li>Lower-roman 类型</li>
+<li>茶</li>
+<li>可口可乐</li>
+</ul>
+
+<ul class="upper-roman">
+<li>Upper-roman 类型</li>
+<li>茶</li>
+<li>可口可乐</li>
+</ul>
+
+<ul class="lower-alpha">
+<li>Lower-alpha 类型</li>
+<li>茶</li>
+<li>可口可乐</li>
+</ul>
+
+<ul class="upper-alpha">
+<li>Upper-alpha 类型</li>
+<li>茶</li>
+<li>可口可乐</li>
+</ul>
+
+<ul class="lower-greek">
+<li>Lower-greek 类型</li>
+<li>茶</li>
+<li>可口可乐</li>
+</ul>
+
+<ul class="lower-latin">
+<li>Lower-latin 类型</li>
+<li>茶</li>
+<li>可口可乐</li>
+</ul>
+
+<ul class="upper-latin">
+<li>Upper-latin 类型</li>
+<li>茶</li>
+<li>可口可乐</li>
+</ul>
+
+<ul class="hebrew">
+<li>Hebrew 类型</li>
+<li>茶</li>
+<li>可口可乐</li>
+</ul>
+
+<ul class="armenian">
+<li>Armenian 类型</li>
+<li>茶</li>
+<li>可口可乐</li>
+</ul>
+
+<ul class="georgian">
+<li>Georgian 类型</li>
+<li>茶</li>
+<li>可口可乐</li>
+</ul>
+
+<ul class="cjk-ideographic">
+<li>Cjk-ideographic 类型</li>
+<li>茶</li>
+<li>可口可乐</li>
+</ul>
+
+<ul class="hiragana">
+<li>Hiragana 类型</li>
+<li>茶</li>
+<li>可口可乐</li>
+</ul>
+
+<ul class="katakana">
+<li>Katakana 类型</li>
+<li>茶</li>
+<li>可口可乐</li>
+</ul>
+
+<ul class="hiragana-iroha">
+<li>Hiragana-iroha 类型</li>
+<li>茶</li>
+<li>可口可乐</li>
+</ul>
+
+<ul class="katakana-iroha">
+<li>Katakana-iroha 类型</li>
+<li>茶</li>
+<li>可口可乐</li>
+</ul>
+
+</body>
+</html>
+
+```
+
+
+
+---
+
+## CSS表格
+
+#### 表格边框
+
+border属性设置表格边框
+
+```css
+table, th, td
+{
+    border: 1px solid blue;
+}
+```
+
+如果需要把表格显示为单线条边框，请使用 border-collapse 属性。
+
+---
+
+#### 折叠边框
+
+border-collapse设置是否将表格边框折叠为单一边框
+
+```css
+table{
+    border-collapse: collapse;
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
