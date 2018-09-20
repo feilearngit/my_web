@@ -308,7 +308,15 @@ input[type="button"]
 
    **<u>即颜色属性将被继承于外部样式表</u>，而文字排列（text-alignment）和字体尺寸（font-size）会被内部样式表中的规则取代。**
 
+
+
+   ---
+
+
+
    # CSS样式
+
+
 
    ## CSS背景
 
