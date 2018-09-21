@@ -964,6 +964,10 @@ border-collapse设置是否将表格边框折叠为单一边框
 table{
     border-collapse: collapse;
 }
+table, th, td
+{
+    border: 1px solid black;
+}
 ```
 
 
