@@ -966,9 +966,380 @@ table{
 }
 table, th, td
 {
-    border: 1px solid black;
+    border: 1px solid black;  /*solid  实线*/
 }
 ```
+
+
+
+#### 表格宽度和高度
+
+```css
+table
+{
+    width: 100%;
+}
+
+th
+{
+    height: 50px;
+}
+```
+
+**HTML表单中有两种类型的单元格**
+
+- 表头单元格 - 包含表头信息（由th元素创建）
+- 标准单元格 - 包含数据（由td元素创建）
+
+th元素内部的文本通常会呈现为居中加粗，而td元素内的文本通常是左对齐的普通文本。
+
+ **如果要将内容横跨多个行或列，使用colspan和rowspan属性。**
+
+#### 表格文本对齐
+
+text-align和 vertical-align属性设置表格中文本的对齐方式。
+
+text-align设置水平对齐方式
+
+```css
+td{
+    text-align: right;
+}
+```
+
+Vergical-align设置垂直对齐方式
+
+```css
+td{
+    height: 50px;
+    vertical-align: bottom;
+}
+```
+
+#### 表格内边距
+
+padding属性控制
+
+```css
+td{
+    padding: 15px;
+}
+```
+
+#### 表格颜色
+
+```css
+table, th, td
+{
+    border: 1px solid green;
+}
+th
+{
+    background-color: green;
+    color: white;
+}
+```
+
+---
+
+
+
+## CSS轮廓
+
+---
+
+轮廓（outline）是绘制元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用。
+
+---
+
+ **CSS边框属性**
+
+| 属性          | 描述                           |
+| ------------- | ------------------------------ |
+| outline       | 在一个声明中设置所有的轮廓属性 |
+| outline-color | 轮廓颜色                       |
+| outline-style | 轮廓样式                       |
+| outline-width | 轮廓宽度                       |
+
+---
+
+
+
+## CSS框模型
+
+---
+
+**CSS框模型（Box Model）规定了元素框处理元素内容、<u>内边框</u>、<u>边框</u>、<u>外边距</u>的方式。**
+
+![ct_boxmodel](/Users/apple/Documents/GitHub/my_web/web Front-end/material/ct_boxmodel.gif)
+
+- 内边距 - 内边距呈现元素的背景
+- 边框 - 内边距的边缘是边框
+- 外边距 - 边框以外是外边距，默认是透明的，不会遮挡其后的任何元素。
+
+内边距、边框和外边距都是可选的，默认值是零。
+
+```css
+* {
+    margin: 0;
+    padding: 0;
+}
+```
+
+
+
+![CSS æ¡æ¨¡åå®ä¾](http://www.w3school.com.cn/i/ct_css_boxmodel_example.gif)
+
+```css
+#box{
+    width:70px;
+    padding: 5px;
+    margin: 10px;
+}
+```
+
+**==提示：==**外边距可以是负值，而且在很多情况下都要用到负值的外边距。
+
+**CSS内边距属性**
+
+| 属性                                                         | 描述                                                 |
+| ------------------------------------------------------------ | ---------------------------------------------------- |
+| [padding](http://www.w3school.com.cn/cssref/pr_padding.asp)  | 简写属性。作用是在一个声明中设置元素的所内边距属性。 |
+| [padding-bottom](http://www.w3school.com.cn/cssref/pr_padding-bottom.asp) | 设置元素的下内边距。                                 |
+| [padding-left](http://www.w3school.com.cn/cssref/pr_padding-left.asp) | 设置元素的左内边距。                                 |
+| [padding-right](http://www.w3school.com.cn/cssref/pr_padding-right.asp) | 设置元素的右内边距。                                 |
+| [padding-top](http://www.w3school.com.cn/cssref/pr_padding-top.asp) | 设置元素的上内边距。                                 |
+
+---
+
+## CSS边框
+
+---
+
+**元素的边框（border）是围绕元素内容和内边距的一条或多条线**
+
+**CSS border属性允许你规定元素边框的样式、宽度和颜色。**
+
+---
+
+每个边框有3个方面：宽度、样式以及颜色。
+
+#### 边框与背景
+
+边框绘制在“元素的背景之上”。
+
+#### 边框的样式
+
+border-style属性定义了10个不同的非inherit样式。
+
+| 值      | 描述                                                         |
+| ------- | ------------------------------------------------------------ |
+| none    | 定义无边框。                                                 |
+| hidden  | 与 "none" 相同。不过应用于表时除外，对于表，hidden 用于解决边框冲突。 |
+| dotted  | 定义点状边框。在大多数浏览器中呈现为实线。                   |
+| dashed  | 定义虚线。在大多数浏览器中呈现为实线。                       |
+| solid   | 定义实线。                                                   |
+| double  | 定义双线。双线的宽度等于 border-width 的值。                 |
+| groove  | 定义 3D 凹槽边框。其效果取决于 border-color 的值。           |
+| ridge   | 定义 3D 垄状边框。其效果取决于 border-color 的值。           |
+| inset   | 定义 3D inset 边框。其效果取决于 border-color 的值。         |
+| outset  | 定义 3D outset 边框。其效果取决于 border-color 的值。        |
+| inherit | 规定应该从父元素继承边框样式。                               |
+
+```css
+p {border-style: solid solid solid none;}
+p {border-style: solid; border-left-style: none;}
+```
+
+
+
+#### 边框的宽度
+
+<u>border-width</u>为边框指定宽度
+
+```css
+p {border-style: solid; border-width: 5px;}
+p {border-style: solid; border-width: thick;}
+```
+
+
+
+#### 单边宽度
+
+```css
+p {border-style: solid; border-width: 15px 5px 15px 5px;}
+```
+
+```css
+p {
+  border-style: solid;
+  border-top-width: 15px;
+  border-right-width: 5px;
+  border-bottom-width: 15px;
+  border-left-width: 5px;
+  }
+```
+
+---
+
+#### 边框的颜色
+
+border-color属性，最多接受4个颜色值
+
+```css
+p {
+  border-style: solid;
+  border-color: blue rgb(25%,35%,45%) #909090 red;
+  }
+```
+
+注释：默认的边框颜色是元素本身的前景色。如果没有为边框声明颜色，它将与元素的文本颜色相同。另一方面，如果元素没有任何文本，假设它是一个表格，其中只包含图像，那么该表的边框颜色就是其父元素的文本颜色（因为 color 可以继承）。这个父元素很可能是 body、div 或另一个 table。
+
+---
+
+CSS2 引入了边框颜色值 transparent。这个值用于创建有宽度的不可见边框。请看下面的例子：
+
+```css
+<a href="#">AAA</a>
+<a href="#">BBB</a>
+<a href="#">CCC</a>
+```
+
+我们为上面的链接定义了如下样式：
+
+```css
+a:link, a:visited {
+  border-style: solid;
+  border-width: 5px;
+  border-color: transparent;
+  }
+a:hover {border-color: gray;}
+```
+
+
+
+从某种意义上说，利用 transparent，使用边框就像是额外的内边距一样；此外还有一个好处，就是能在你需要的时候使其可见。这种透明边框相当于内边距，因为元素的背景会延伸到边框区域（如果有可见背景的话）。
+
+重要事项：在 IE7 之前，IE/WIN 没有提供对 transparent 的支持。在以前的版本，IE 会根据元素的 color 值来设置边框颜色。
+
+**CSS边框属性**
+
+| 属性                                                         | 描述                                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [border](http://www.w3school.com.cn/cssref/pr_border.asp)    | 简写属性，用于把针对四个边的属性设置在一个声明。             |
+| [border-style](http://www.w3school.com.cn/cssref/pr_border-style.asp) | 用于设置元素所有边框的样式，或者单独地为各边设置边框样式。   |
+| [border-width](http://www.w3school.com.cn/cssref/pr_border-width.asp) | 简写属性，用于为元素的所有边框设置宽度，或者单独地为各边边框设置宽度。 |
+| [border-color](http://www.w3school.com.cn/cssref/pr_border-color.asp) | 简写属性，设置元素的所有边框中可见部分的颜色，或为 4 个边分别设置颜色。 |
+| [border-bottom](http://www.w3school.com.cn/cssref/pr_border-bottom.asp) | 简写属性，用于把下边框的所有属性设置到一个声明中。           |
+| [border-bottom-color](http://www.w3school.com.cn/cssref/pr_border-bottom_color.asp) | 设置元素的下边框的颜色。                                     |
+| [border-bottom-style](http://www.w3school.com.cn/cssref/pr_border-bottom_style.asp) | 设置元素的下边框的样式。                                     |
+| [border-bottom-width](http://www.w3school.com.cn/cssref/pr_border-bottom_width.asp) | 设置元素的下边框的宽度。                                     |
+| [border-left](http://www.w3school.com.cn/cssref/pr_border-left.asp) | 简写属性，用于把左边框的所有属性设置到一个声明中。           |
+| [border-left-color](http://www.w3school.com.cn/cssref/pr_border-left_color.asp) | 设置元素的左边框的颜色。                                     |
+| [border-left-style](http://www.w3school.com.cn/cssref/pr_border-left_style.asp) | 设置元素的左边框的样式。                                     |
+| [border-left-width](http://www.w3school.com.cn/cssref/pr_border-left_width.asp) | 设置元素的左边框的宽度。                                     |
+| [border-right](http://www.w3school.com.cn/cssref/pr_border-right.asp) | 简写属性，用于把右边框的所有属性设置到一个声明中。           |
+| [border-right-color](http://www.w3school.com.cn/cssref/pr_border-right_color.asp) | 设置元素的右边框的颜色。                                     |
+| [border-right-style](http://www.w3school.com.cn/cssref/pr_border-right_style.asp) | 设置元素的右边框的样式。                                     |
+| [border-right-width](http://www.w3school.com.cn/cssref/pr_border-right_width.asp) | 设置元素的右边框的宽度。                                     |
+| [border-top](http://www.w3school.com.cn/cssref/pr_border-top.asp) | 简写属性，用于把上边框的所有属性设置到一个声明中。           |
+| [border-top-color](http://www.w3school.com.cn/cssref/pr_border-top_color.asp) | 设置元素的上边框的颜色。                                     |
+| [border-top-style](http://www.w3school.com.cn/cssref/pr_border-top_style.asp) | 设置元素的上边框的样式。                                     |
+| [border-top-width](http://www.w3school.com.cn/cssref/pr_border-top_width.asp) | 设置元素的上边框的宽度。                                     |
+
+
+
+## CSS外边距
+
+---
+
+#### CSS margin属性
+
+margin可以接受任何长度单位，像素、英寸、毫米或em。
+
+margin可以设置auto
+
+```css
+h1{margin: 0.25in;}
+h2{margin: 10px 0px 15px 5px} /*顺时针*/
+p{margin: 10%;} /*%相对于父元素的width计算的*/
+```
+
+margin默认是0，如果没有为margin声明一个值，就不会出现外边距。
+
+---
+
+- 如果缺少左外边距的值，则使用右外边距的值。
+- 如果缺少下外边距的值，则使用上外边距的值。
+- 如果缺少右外边距的值，则使用上外边距的值。
+
+![CSS å¼å¤å¶](http://www.w3school.com.cn/i/ct_css_margin_value.gif)
+
+```css
+h1 {margin: 0.25em 1em 0.5em;}	/* 等价于 0.25em 1em 0.5em 1em */
+h2 {margin: 0.5em 1em;}		/* 等价于 0.5em 1em 0.5em 1em */
+p {margin: 1px;}			/* 等价于 1px 1px 1px 1px */
+```
+
+---
+
+#### 单边外边距属性
+
+为元素单边设置外边距，不必使用margin（需要键入很多auto）：
+
+```css
+p{margin-left: 20px;}
+h2 {
+  margin-top: 20px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  margin-left: 20px;
+  }
+```
+
+<u>==提示：==</u>Netscape和IE对body标签定义的默认边距都是8px。而opera不是。相反的，Opera将内部填充的默认值定义为8px。
+
+---
+
+## CSS外边距合并
+
+外边距合并是指，当两个垂直外边距相遇时，他们将形成一个外边距。
+
+合并后的外边距的高度等于两个发生合并的外边距的高度中的较大者。
+
+---
+
+![CSS å¤è¾¹è·åå¹¶å®ä¾ 1](http://www.w3school.com.cn/i/ct_css_margin_collapsing_example_1.gif)
+
+当一个元素包含在另一个元素中时（假设没有内边距或边框把外边距分隔开），它们的上和/或下外边距也会发生合并。请看下图：
+
+![CSS å¤è¾¹è·åå¹¶å®ä¾ 2](http://www.w3school.com.cn/i/ct_css_margin_collapsing_example_2.gif)
+
+假设有一个空元素，它有外边距，但是没有边框或填充。在这种情况下，上外边距与下外边距就碰到了一起，它们会发生合并：
+
+![CSS å¤è¾¹è·åå¹¶å®ä¾ 3](http://www.w3school.com.cn/i/ct_css_margin_collapsing_example_3.gif)
+
+如果这个外边距遇到另一个元素的外边距，它还会发生合并：
+
+![CSS å¤è¾¹è·åå¹¶å®ä¾ 4](http://www.w3school.com.cn/i/ct_css_margin_collapsing_example_4.gif)
+
+外边距合并初看上去可能有点奇怪，但是实际上，它是有意义的。以由几个段落组成的典型文本页面为例。第一个段落上面的空间等于段落的上外边距。如果没有外边距合并，后续所有段落之间的外边距都将是相邻上外边距和下外边距的和。这意味着段落之间的空间是页面顶部的两倍。如果发生外边距合并，段落之间的上外边距和下外边距就合并在一起，这样各处的距离就一致了。
+
+![CSS å¤è¾¹è·åå¹¶çå®éæä¹](http://www.w3school.com.cn/i/ct_css_margin_collapsing.gif)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
