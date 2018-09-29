@@ -1063,9 +1063,9 @@ th
 
 ---
 
+# CSS模型框
 
 
-## CSS框模型
 
 ---
 
@@ -1462,9 +1462,9 @@ CSS 定位属性允许你对元素进行定位。
 
 #### CSS浮动
 
-![1538122048217](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1538122048217.png)
+![%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1538122048217](../../material/%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1538122048217.png)
 
-![1538122087436](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1538122087436.png)
+![%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1538122087436](../../material/%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1538122087436.png)
 
 ---
 
@@ -1488,6 +1488,620 @@ float 属性定义元素在哪个方向浮动。以往这个属性总应用于�
 如果浮动非替换元素，则要指定一个明确的宽度；否则，它们会尽可能地窄。
 
 注释：假如在一行之上只有极少的空间可供浮动元素，那么这个元素会跳至下一行，这个过程会持续到某一行拥有足够的空间为止。
+
+---
+
+# CSS选择器
+
+---
+
+## CSS元素选择器
+
+#### CSS元素选择器
+
+---
+
+文档的元素是最基本的选择器。
+
+如果设置HTML的样式，选择器通常将是某个HTML元素，比如p、h1、em、a，甚至可以是HTML本身：
+
+```css
+html {color: black;}
+h1 {color: blue;}
+h2 {color: silver;}
+```
+
+---
+
+#### 类型选择器
+
+在W3C标准中，元素选择器又称为类型选择器（type selector）。
+
+“类型选择器匹配文档语言元素类型的名称。类型选择器匹配文档树中该元素类型的每一个实例。”
+
+CSS元素选择器可以设置XML文档中元素的样式。
+
+---
+
+## CSS分组
+
+#### 选择器分组
+
+设置h2和段落都为灰色
+
+```css
+h2,p {color: gray;}
+```
+
+```css
+/* no grouping */
+h1 {color:blue;}
+h2 {color:blue;}
+h3 {color:blue;}
+h4 {color:blue;}
+h5 {color:blue;}
+h6 {color:blue;}
+
+/* grouping */
+h1, h2, h3, h4, h5, h6 {color:blue;}
+```
+
+---
+
+#### 通配符选择器
+
+通配选择器（universal selector），显示为一个星号（*）。可以匹配任何元素。
+
+```css
+* {color: red}
+```
+
+---
+
+#### 声明分组
+
+对声明进行分组
+
+```css
+h1 {
+  font: 28px Verdana;
+  color: blue;
+  background: red;
+  }
+```
+
+#### 结合选择器和声明的分组
+
+我们可以在一个规则中结合选择器分组和声明分组，就可以使用很少的语句定义相对复杂的样式。
+
+下面的规则为所有标题指定了一种复杂的样式：
+
+```css
+h1, h2, h3, h4, h5, h6 {
+  color:gray;
+  background: white;
+  padding: 10px;
+  border: 1px solid black;
+  font-family: Verdana;
+  }
+```
+
+---
+
+## CSS类选择器详解
+
+---
+
+**类选择器允许以一种独立于文档元素的方式来指定样式。**
+
+---
+
+#### CSS类选择器
+
+类选择器允许以一种独立于文档元素的方式来指定样式。
+
+该选择器可以单独使用，也可以与其他元素结合使用。
+
+==提示==：只有适当地标记文档后，才能使用这些选择器，所以使用这两种选择器通常需要先做一些构想和计划。
+
+要应用样式而不考虑具体设计的元素，最常用的方法就是使用类选择器。
+
+```html
+<html>
+<head>
+<style type="text/css">
+h1.important {color:red;}
+p.important {color: blue;}
+</style>
+</head>
+
+<body>
+<h1 class="important">This heading is very important.</h1>
+
+<p class="important">This paragraph is very important.</p>
+
+<p>This is a paragraph.</p>
+
+<p>This is a paragraph.</p>
+
+<p>This is a paragraph.</p>
+
+<p>...</p>
+</body>
+</html>
+```
+
+---
+
+#### 综合元素选择器
+
+```css
+p.important {color:red;}
+h1.important {color:blue;}
+```
+
+---
+
+#### CSS多类选择器
+
+​        在 HTML 中，一个 class 值中可能包含一个词列表，各个词之间用空格分隔。例如，如果希望将一个特定的元素同时标记为重要（important）和警告（warning），就可以写作：
+
+```css
+<p class="important warning">
+This paragraph is a very important warning.
+</p>
+```
+
+这两个词的顺序无关紧要，写成 warning important 也可以。
+
+我们假设 class 为 important 的所有元素都是粗体，而 class 为 warning 的所有元素为斜体，class 中同时包含 important 和 warning 的所有元素还有一个银色的背景 。就可以写作：
+
+```css
+.important {font-weight:bold;}
+.warning {font-style:italic;}
+.important.warning {background:silver;}
+```
+
+---
+
+## CSS ID选择器详解
+
+---
+
+**ID选择器允许以一种独立于文档元素的方式来指定样式。**
+
+---
+
+#### CSS ID选择器
+
+**语法**
+
+ID选择器前面有一个#号 - 也称为棋盘号或井号。
+
+```css
+*#intro {font-weight:bold;}
+```
+
+```css
+<p id="intro">This is a paragraph of introduction.</p>
+```
+
+#### 类选择器与ID选择器区别
+
+### 区别 1：只能在文档中使用一次
+
+与类不同，在一个 HTML 文档中，ID 选择器会使用一次，而且仅一次。
+
+### 区别 2：不能使用 ID 词列表
+
+不同于类选择器，ID 选择器不能结合使用，因为 ID 属性不允许有以空格分隔的词列表。
+
+### 区别 3：ID 能包含更多含义
+
+类似于类，可以独立于元素来选择 ID。有些情况下，您知道文档中会出现某个特定 ID 值，但是并不知道它会出现在哪个元素上，所以您想声明独立的 ID 选择器。例如，您可能知道在一个给定的文档中会有一个 ID 值为 mostImportant 的元素。您不知道这个最重要的东西是一个段落、一个短语、一个列表项还是一个小节标题。您只知道每个文档都会有这么一个最重要的内容，它可能在任何元素中，而且只能出现一个。在这种情况下，可以编写如下规则：
+
+```css
+#mostImportant {color:red; background:yellow;}
+```
+
+这个规则会与以下各个元素匹配（这些元素不能在同一个文档中同时出现，因为它们都有相同的 ID 值）：
+
+```css
+<h1 id="mostImportant">This is important!</h1>
+<em id="mostImportant">This is important!</em>
+<ul id="mostImportant">This is important!</ul>
+```
+
+---
+
+#### 区分大小写
+
+类选择器和 ID  选择器可能是区分大小写的。这取决于文档的语言。HTML 和 XHTML 将类和 ID 值定义为区分大小写，所以类和 ID 值的大小写必须与文档中的相应值匹配。
+
+因此，对于以下的 CSS 和 HTML，元素不会变成粗体：
+
+```css
+#intro {font-weight:bold;}
+
+<p id="Intro">This is a paragraph of introduction.</p>
+```
+
+由于字母 i 的大小写不同，所以选择器不会匹配上面的元素。
+
+---
+
+## CSS属性选择器详解
+
+---
+
+**属性选择器可以根据元素的属性及属性值来选择元素。**
+
+---
+
+根据多个属性进行选择，只需将属性选择器链接在一起即可。
+
+例如，为了将同时有 href 和 title 属性的 HTML 超链接的文本设置为红色，可以这样写：
+
+```css
+a[href][title] {color:red;}
+```
+
+```html
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<style type="text/css">
+a[href][title]
+{
+color:red;
+}
+</style>
+</head>
+
+<body>
+<h1>可以应用样式：</h1>
+<a title="W3School Home" href="http://w3school.com.cn">W3School</a>
+
+<hr />
+
+<h1>无法应用样式：</h1>
+<a href="http://w3school.com.cn">W3School</a>
+</body>
+</html>
+```
+
+---
+
+#### 根据具体属性值选择
+
+除了选择拥有某些属性的元素，还可以进一步缩小选择范围，只选择有特定属性值的元素。
+
+例如，假设希望将指向 Web 服务器上某个指定文档的超链接变成红色，可以这样写：
+
+```css
+a[href="http://www.w3school.com.cn/about_us.asp"] {color: red;}
+```
+
+与简单属性选择器类似，可以把多个属性-值选择器链接在一起来选择一个文档。
+
+```css
+a[href="http://www.w3school.com.cn/"][title="W3School"] {color: red;}
+```
+
+### 属性与属性值必须完全匹配
+
+请注意，这种格式要求必须与属性值完全匹配。
+
+如果属性值包含用空格分隔的值列表，匹配就可能出问题。
+
+请考虑一下的标记片段：
+
+```css
+<p class="important warning">This paragraph is a very important warning.</p>
+```
+
+如果写成 p[class="important"]，那么这个规则不能匹配示例标记。
+
+要根据具体属性值来选择该元素，必须这样写：
+
+```css
+p[class="important warning"] {color: red;}
+```
+
+---
+
+## 根据部分属性值选择
+
+如果需要根据属性值中的词列表的某个词进行选择，则需要使用波浪号（~）。
+
+假设您想选择 class 属性中包含 important 的元素，可以用下面这个选择器做到这一点：
+
+```css
+p[class~="important"] {color: red;}
+```
+
+---
+
+```html
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<style type="text/css">
+img[title~="Figure"]
+{
+border: 1px solid gray;
+}
+</style>
+</head>
+
+<body>
+<h1>可以应用样式：</h1>
+<img title="Figure 1" src="/i/figure-1.gif" />
+<img title="Figure 2" src="/i/figure-2.gif" />
+
+<hr />
+
+<h1>无法应用样式：</h1>
+<img src="/i/figure-1.gif" />
+<img src="/i/figure-2.gif" />
+</body>
+</html>
+
+```
+
+---
+
+#### 子串匹配属性选择器
+
+| 类型         | 描述                                       |
+| ------------ | ------------------------------------------ |
+| [abc^="def"] | 选择 abc 属性值以 "def" 开头的所有元素     |
+| [abc$="def"] | 选择 abc 属性值以 "def" 结尾的所有元素     |
+| [abc*="def"] | 选择 abc 属性值中包含子串 "def" 的所有元素 |
+
+如果希望对指向 W3School 的所有链接应用样式，不必为所有这些链接指定 class，再根据这个类编写样式，而只需编写以下规则：
+
+```css
+a[href*="w3school.com.cn"] {color: red;}
+```
+
+---
+
+#### 特定属性选择器
+
+最后为您介绍特定属性选择器。请看下面的例子：
+
+```css
+*[lang|="en"] {color: red;}
+```
+
+上面这个规则会选择 lang 属性等于 en 或以 en- 开头的所有元素。因此，以下示例标记中的前三个元素将被选中，而不会选择后两个元素：
+
+```html
+<p lang="en">Hello!</p>
+<p lang="en-us">Greetings!</p>
+<p lang="en-au">G'day!</p>
+<p lang="fr">Bonjour!</p>
+<p lang="cy-en">Jrooana!</p>
+```
+
+一般来说，[att|="val"] 可以用于任何属性及其值。
+
+假设一个 HTML 文档中有一系列图片，其中每个图片的文件名都形如 *figure-1.jpg* 和 *figure-2.jpg*。就可以使用以下选择器匹配所有这些图像：
+
+```css
+img[src|="figure"] {border: 1px solid gray;}
+```
+
+---
+
+#### CSS选择器参考手册
+
+| [[*attribute*\]](http://www.w3school.com.cn/cssref/selector_attribute.asp) | 用于选取带有指定属性的元素。                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [[*attribute*=*value*\]](http://www.w3school.com.cn/cssref/selector_attribute_value.asp) | 用于选取带有指定属性和值的元素。                             |
+| [[*attribute*~=*value*\]](http://www.w3school.com.cn/cssref/selector_attribute_value_contain.asp) | 用于选取属性值中包含指定词汇的元素。                         |
+| [[*attribute*\|=*value*\]](http://www.w3school.com.cn/cssref/selector_attribute_value_start.asp) | 用于选取带有以指定值开头的属性值的元素，该值必须是整个单词。 |
+| [[*attribute*^=*value*\]](http://www.w3school.com.cn/cssref/selector_attr_begin.asp) | 匹配属性值以指定值开头的每个元素。                           |
+| [[*attribute*$=*value*\]](http://www.w3school.com.cn/cssref/selector_attr_end.asp) | 匹配属性值以指定值结尾的每个元素。                           |
+| [[*attribute**=*value*\]](http://www.w3school.com.cn/cssref/selector_attr_contain.asp) | 匹配属性值中包含指定值的每个元素。                           |
+
+---
+
+## CSS后代选择器
+
+---
+
+**后代选择器（descendant selector）又称为包含选择器。**
+
+**后代选择器可以选择作为某元素后代的元素。**
+
+---
+
+我们可以定义后代选择器来创建一些规则，使这些规则在某些文档结构中起作用，而在另外一些结构中不起作用。
+
+举例来说，如果您希望只对 h1 元素中的 em 元素应用样式，可以这样写：
+
+```css
+h1 em {color:red;}
+```
+
+上面这个规则会把作为 h1 元素后代的 em 元素的文本变为 红色。其他 em 文本（如段落或块引用中的 em）则不会被这个规则选中：
+
+```html
+<h1>This is a <em>important</em> heading</h1>
+<p>This is a <em>important</em> paragraph.</p>
+```
+
+---
+
+#### 语法解释
+
+在后代选择器中，规则左边的选择器一端包括两个或多个用空格分隔的选择器。选择器之间的空格是一种结合符（combinator）。每个空格结合符可以解释为“... 在 ... 找到”、“... 作为 ... 的一部分”、“... 作为 ... 的后代”，但是要求必须从右向左读选择器。
+
+因此，h1 em 选择器可以解释为==“作为 h1 元素后代的任何 em 元素”==。如果要从左向右读选择器，可以换成以下说法：“包含 em 的所有 h1 会把以下样式应用到该 em”。
+
+---
+
+#### 具体应用
+
+后代选择器的功能极其强大。有了它，可以使 HTML 中不可能实现的任务成为可能。
+
+假设有一个文档，其中有一个边栏，还有一个主区。边栏的背景为蓝色，主区的背景为白色，这两个区都包含链接列表。不能把所有链接都设置为蓝色，因为这样一来边栏中的蓝色链接都无法看到。
+
+解决方法是使用后代选择器。在这种情况下，可以为包含边栏的 div 指定值为 sidebar 的 class 属性，并把主区的 class 属性值设置为 maincontent。然后编写以下样式：
+
+```css
+div.sidebar {background:blue;}
+div.maincontent {background:white;}
+div.sidebar a:link {color:white;}
+div.maincontent a:link {color:blue;}
+```
+
+有关后代选择器有一个易被忽视的方面，即两个元素之间的层次间隔可以是无限的。
+
+例如，如果写作 ul em，这个语法就会选择从 ul 元素继承的所有 em 元素，而不论 em 的嵌套层次多深。
+
+因此，ul em 将会选择以下标记中的所有 em 元素：
+
+```html
+<ul>
+  <li>List item 1
+    <ol>
+      <li>List item 1-1</li>
+      <li>List item 1-2</li>
+      <li>List item 1-3
+        <ol>
+          <li>List item 1-3-1</li>
+          <li>List item <em>1-3-2</em></li>
+          <li>List item 1-3-3</li>
+        </ol>
+      </li>
+      <li>List item 1-4</li>
+    </ol>
+  </li>
+  <li>List item 2</li>
+  <li>List item 3</li>
+</ul>
+```
+
+---
+
+## CSS子元素选择器
+
+---
+
+子元素选择器（Child selectors）只能选择作为某元素子元素的元素。
+
+---
+
+#### 选择子元素
+
+如果不希望选择任意的后代元素，而是希望缩小范围，只选择某个元素的子元素，可以使用子元素选择器。
+
+如果希望选择只作为h1元素子元素的strong元素，可以这样写：
+
+```css
+h1 > strong {color: red;}
+```
+
+---
+
+#### 语法解释
+
+子选择器使用了大于号（子结合符）。
+
+```css
+h1 > strong
+h1> strong
+h1 >strong
+h1>strong
+```
+
+  如果从右向左读，选择器 h1 > strong 可以解释为“选择作为 h1 元素子元素的所有 strong 元素”。
+
+---
+
+#### 结合后代选择器和子选择器
+
+```css
+table.company td > p
+```
+
+选择作为td元素子元素的所有p元素，这个td元素本身从table元素继承，该table元素有一个包含company的class属性。
+
+---
+
+## CSS相邻兄弟选择器
+
+```css
+h1 + p {margin-top:50px;}
+```
+
+这个选择器读作：“选择紧接在 h1 元素后出现的段落，h1 和 p 元素拥有共同的父元素”。
+
+相邻兄弟选择器使用了加号（+），即相邻兄弟结合符（Adjacent sibling combinator）。
+
+注释：与子结合符一样，相邻兄弟结合符旁边可以有空白符。
+
+请看下面这个文档树片段：
+
+```html
+<div>
+  <ul>
+    <li>List item 1</li>
+    <li>List item 2</li>
+    <li>List item 3</li>
+  </ul>
+  <ol>
+    <li>List item 1</li>
+    <li>List item 2</li>
+    <li>List item 3</li>
+  </ol>
+</div>
+```
+
+在上面的片段中，div 元素中包含两个列表：一个无序列表，一个有序列表，每个列表都包含三个列表项。这两个列表是相邻兄弟，列表项本身也是相邻兄弟。不过，第一个列表中的列表项与第二个列表中的列表项不是相邻兄弟，因为这两组列表项不属于同一父元素（最多只能算堂兄弟）。
+
+请记住，用一个结合符只能选择两个相邻兄弟中的第二个元素。请看下面的选择器：
+
+```css
+li + li {font-weight:bold;}
+```
+
+上面这个选择器只会把列表中的第二个和第三个列表项变为粗体。第一个列表项不受影响。
+
+---
+
+相邻兄弟结合符还可以结合其他结合符：
+
+```css
+html > body table + ul {margin-top:20px;}
+```
+
+这个选择器解释为：选择紧接在 table 元素后出现的所有兄弟 ul 元素，该 table 元素包含在一个 body 元素中，body 元素本身是 html 元素的子元素。
+
+---
+
+## CSS伪类（Pseudo-classes）
+
+---
+
+**CSS伪类用于向某些选择器添加特殊的效果。**
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
