@@ -2091,45 +2091,341 @@ html > body table + ul {margin-top:20px;}
 
 ---
 
+#### 锚伪类
+
+```css
+a:link {color: #FF0000}		/* 未访问的链接 */
+a:visited {color: #00FF00}	/* 已访问的链接 */
+a:hover {color: #FF00FF}	/* 鼠标移动到链接上 */
+a:active {color: #0000FF}	/* 选定的链接 */
+```
+
+提示：在 CSS 定义中，a:hover 必须被置于 a:link 和 a:visited 之后，才是有效的。
+
+提示：在 CSS 定义中，a:active 必须被置于 a:hover 之后，才是有效的。
+
+提示：伪类名称对大小写不敏感。
+
+---
+
+#### 伪类语法
+
+```css
+selector: pseudo-class{property: value;}
+```
+
+CSS类也可与伪类搭配使用
+
+```css
+selector.class:pseudo-class{property:value;}
+```
+
+---
+
+#### 伪类与CSS类配合使用
+
+```html
+a.red:visited {color:#FF0000}
+<a class="red" href="css_syntax.asp">CSS Syntax</a>
+```
+
+假如上面的例子中的链接被访问过，那么它将显示为红色。
+
+---
+
+#### first-child伪类
+
+可以使用first-child伪类来选择元素的第一个子元素。
+
+```html
+<div>
+    <p>
+        There are the necessary steps:
+    </p>
+    <ul>
+        <li>Intert Key</li>
+        <li>Turn key <strong>clockwise</strong></li>
+        <li>Push accelerator</li>
+    </ul>
+    <p>
+        Do <em>not</em> push the brake at the same time as the accelerator.
+    </p>
+</div>
+```
+
+给定以下规则：
+
+```css
+p:first-child {font-weight: bold;}
+li:first-child {text-transform:uppercase;}
+```
+
+第一个规则将作为某元素第一个子元素的所有 p 元素设置为粗体。第二个规则将作为某个元素（在 HTML 中，这肯定是 ol 或 ul 元素）第一个子元素的所有 li 元素变成大写。
+
+### 例子 1 - 匹配第一个 <p> 元素
+
+在下面的例子中，选择器匹配作为任何元素的第一个子元素的 p 元素：
+
+```html
+<html>
+<head>
+<style type="text/css">
+p:first-child {
+  color: red;
+  } 
+</style>
+</head>
+
+<body>
+<p>some text</p>
+<p>some text</p>
+</body>
+</html>
+```
 
 
 
+### 例子 2 - 匹配所有 <p> 元素中的第一个 <i> 元素
+
+在下面的例子中，选择器匹配所有 <p> 元素中的第一个 <i> 元素：
+
+```html
+<html>
+<head>
+<style type="text/css">
+p > i:first-child {
+  font-weight:bold;
+  } 
+</style>
+</head>
+
+<body>
+<p>some <i>text</i>. some <i>text</i>.</p>
+<p>some <i>text</i>. some <i>text</i>.</p>
+</body>
+</html>
+```
 
 
 
+### 例子 3 - 匹配所有作为第一个子元素的 <p> 元素中的所有 <i> 元素
 
+在下面的例子中，选择器匹配所有作为元素的第一个子元素的 <p> 元素中的所有 <i> 元素：
 
+```html
+<html>
+<head>
+<style type="text/css">
+p:first-child i {
+  color:blue;
+  } 
+</style>
+</head>
 
+<body>
+<p>some <i>text</i>. some <i>text</i>.</p>
+<p>some <i>text</i>. some <i>text</i>.</p>
+</body>
+</html>
+```
 
+---
 
+#### CSS2 - :lang伪类
 
+:lang 伪类为不同的语言定义特殊的规则。下面例子为属性值为no的q元素定义引号的类型：
 
+```html
+<html>
+    <head>
+        <style type="text/css">
+        q:lang(no)
+            {
+                quotes: "~" "~"
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+            文字<q lang="no">段落中的引用的文字</q>文字
+        </p>
+    </body>
+</html>
+```
 
+---
 
+#### 伪类
 
+| 属性                                                         | 描述                                     | CSS  |
+| ------------------------------------------------------------ | ---------------------------------------- | ---- |
+| [:active](http://www.w3school.com.cn/cssref/pr_pseudo_active.asp) | 向被激活的元素添加样式。                 | 1    |
+| [:focus](http://www.w3school.com.cn/cssref/pr_pseudo_focus.asp) | 向拥有键盘输入焦点的元素添加样式。       | 2    |
+| [:hover](http://www.w3school.com.cn/cssref/pr_pseudo_hover.asp) | 当鼠标悬浮在元素上方时，向元素添加样式。 | 1    |
+| [:link](http://www.w3school.com.cn/cssref/pr_pseudo_link.asp) | 向未被访问的链接添加样式。               | 1    |
+| [:visited](http://www.w3school.com.cn/cssref/pr_pseudo_visited.asp) | 向已被访问的链接添加样式。               | 1    |
+| [:first-child](http://www.w3school.com.cn/cssref/pr_pseudo_first-child.asp) | 向元素的第一个子元素添加样式。           | 2    |
+| [:lang](http://www.w3school.com.cn/cssref/pr_pseudo_lang.asp) | 向带有指定 lang 属性的元素添加样式。     | 2    |
 
+---
 
+## CSS 伪元素
 
+**CSS伪元素用于向某些选择器设置特殊效果。**
 
+---
 
+#### 语法
 
+伪元素的语法：
 
+```css
+selector:pseudo-element{property:value;}
+```
 
+CSS类也可以与伪元素配合使用：
 
+```css
+selector.class:pseudo-element{property:value;}
+```
 
+---
 
+#### first-line伪元素
 
+"first-line"伪元素用于向文本的首行设置特殊样式。
 
+```css
+p:first-line
+{
+    color: #ff0000;
+    font-variant:small-caps;
+}
+```
 
+注释："first-line" 伪元素只能用于块级元素。
 
+注释：下面的属性可应用于 "first-line" 伪元素：
 
+- font
+- color
+- background
+- word-spacing
+- letter-spacing
+- text-decoration
+- vertical-align
+- text-transform
+- line-height
+- clear
 
+---
 
+#### :first-letter伪元素
 
+"first-letter"伪元素用于向文本的首字母设置特殊样式：
 
+```css
+p:first-letter
+{
+    color:#ff0000;
+    font-size:xx-large;
+}
+```
 
+注释："first-letter" 伪元素只能用于块级元素。
 
+注释：下面的属性可应用于 "first-letter" 伪元素：
 
+- font
+- color
+- background
+- margin
+- padding
+- border
+- text-decoration
+- vertical-align (仅当 float 为 none 时)
+- text-transform
+- line-height
+- float
+- clear
+
+---
+
+#### 伪元素和CSS类
+
+```html
+p.article:first-letter
+  {
+  color: #FF0000;
+  }
+
+<p class="article">This is a paragraph in an article。</p>
+```
+
+上面的例子会使所有 class 为 article 的段落的首字母变为红色。
+
+---
+
+#### 多重伪元素
+
+可以结合多个伪元素来使用
+
+段落的第一个字母将显示为红色，其字体大小为 xx-large。第一行中的其余文本将为蓝色，并以小型大写字母显示。段落中的其余文本将以默认字体大小和颜色来显示：
+
+```css
+p:first-letter
+  {
+  color:#ff0000;
+  font-size:xx-large;
+  }
+
+p:first-line
+  {
+  color:#0000ff;
+  font-variant:small-caps;
+  }
+```
+
+---
+
+#### CSS2 - :before伪元素
+
+":before"伪元素可以在元素的内容前面插入新内容。
+
+在每一个<h1>元素前面插入一副图片：
+
+```css
+h1:before
+{
+    content:url(logo.gif);
+}
+```
+
+---
+
+#### CSS2 - :after伪元素
+
+":after"伪元素可以在元素的内容之后插入新内容。
+
+在每个<h1>元素后面插入一副图片：
+
+```css
+h1:after
+{
+    content:url(logo.gif);
+}
+```
+
+---
+
+#### 伪元素
+
+| 属性                                                         | 描述                             | CSS  |
+| ------------------------------------------------------------ | -------------------------------- | ---- |
+| [:first-letter](http://www.w3school.com.cn/cssref/pr_pseudo_first-letter.asp) | 向文本的第一个字母添加特殊样式。 | 1    |
+| [:first-line](http://www.w3school.com.cn/cssref/pr_pseudo_first-line.asp) | 向文本的首行添加特殊样式。       | 1    |
+| [:before](http://www.w3school.com.cn/cssref/pr_pseudo_before.asp) | 在元素之前添加内容。             | 2    |
+| [:after](http://www.w3school.com.cn/cssref/pr_pseudo_after.asp) | 在元素之后添加内容。             | 2    |
 
 
 

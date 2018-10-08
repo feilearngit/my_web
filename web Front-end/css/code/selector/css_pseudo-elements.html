@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<style type="text/css">
+		a.one:link {color: #ff0000}
+		a.one:visited {color: #0000ff}
+		a.one:hover {color: #ffcc00}
+
+		a.two:link {color: #ff0000}
+		a.two:visited {color: #0000ff}
+		a.two:hover {font-size: 150%}
+
+		a.three:link {color: #ff0000}
+		a.three:visited {color: #0000ff}
+		a.three:hover {background: #66ff66}
+
+		a.four:link {color: #ff0000}
+		a.four:visited {color: #0000ff}
+		a.four:hover {font-family: monospace;}
+
+		a.five:link {color: #ff0000; text-decoration: none;}
+		a.five:visited {color: #0000ff; text-decoration: none;}
+		a.five:hover {text-decoration: underline;}
+
+		input:focus
+		{
+			background-color: yellow;
+		}
+
+	</style>
+	<title></title>
+</head>
+<body>
+<p>请把鼠标移动到这些链接上查看效果：</p>
+<p><b><a class="one" href="/selector.xml" target="_blank">这个链接改变颜色</a></b></p>
+<p><b><a href="/selector.xml" class="two" target="_blank">这个链接改变字体大小</a></b></p>
+<p><b><a class="three" href="/index.html" target="_blank">这个链接改变背景颜色</a></b></p>
+<p><b><a class="four" href="/index.html" target="_blank">这个链接改变字体系列</a></b></p>
+<p><b><a class="five" href="/index.html" target="_blank">这个链接改变文本装饰</a></b></p>
+
+<form action="form_action.asp" method="get">
+First name: <input type="text" name="frame" /><br />
+Last  name: <input type="text" name="lname" /><br />
+<input type="submit" value="Submit" />
+
+<p><b>注释：</b>如果已规定 !DOCTYPE，那么 IE8及更高版本支持focus伪类。</p>
+	
+</form>
+
+
+
+
+
+
+</body>
+</html>
