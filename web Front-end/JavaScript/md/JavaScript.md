@@ -284,6 +284,246 @@ var carname; 实际上是undefined。
 
 ---
 
+```JavaScript
+var cars=new Array();
+cars[0] = "Audi";
+cars[1] = "BMW";
+cars[2] = "Mercedes-Benz";
+
+var cars=new Array("Audi","BMW","Mercedes-Benz");
+
+var cars=["Audi","BMW","Volvo"];
+```
+
+---
+
+#### JavaScript对象
+
+```javascript
+var person={firstname:"Bill", lastname:"Gates", id:5566};
+
+var person={
+firstname : "Bill",
+lastname  : "Gates",
+id        :  5566
+};
+
+name=person.lastname;
+name=person["lastname"];
+```
+
+---
+
+#### undefined和Null
+
+```javascript
+cars = null;
+person = null;
+```
+
+---
+
+#### 声明变量类型
+
+```javascript
+var carname=new String;
+var x=      new Number;
+var y=      new Boolean;
+var cars=   new Array;
+var person= new Object;
+```
+
+JavaScript变量均为对象，当声明一个变量时，就创建了一个新的对象。
+
+---
+
+## JavaScript对象
+
+JavaScript中所有的事物都是对象：字符串、数字、数组、日期等等。
+
+在JavaScript中，对象是拥有属性和方法的数据。
+
+---
+
+#### 属性和方法
+
+属性是与对象相关的值。颜色、重量。
+
+方法是能够在对象上执行的动作。drive()  run()  stop()
+
+---
+
+#### JavaScript中的对象
+
+对象是数据（变量），拥有属性和方法。
+
+```html
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+person=new Object();
+person.firstname="Bill";
+person.lastname="Gates";
+person.age=56;
+person.eyecolor="blue";
+document.write(person.firstname + " is " + person.age + " years old.");
+</script>
+
+</body>
+</html>
+```
+
+---
+
+#### 访问对象属性
+
+```javascript
+var message="Hello World!";
+var x = message.length;   //12
+```
+
+---
+
+#### 访问对象的方法
+
+```javascript
+var message = "Hello World!";
+var x = message.toUpperCase();  //HELLO WORLD!
+```
+
+
+
+---
+
+## JavaScript函数
+
+函数是由事件驱动的或者当它被调用时执行的可重复使用的代码块。
+
+#### 调用带参数的函数
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		function myFunction_1(name, job)
+		{
+			alert("Welcome" + name + ", the" + job);
+		}
+	</script>
+<button onclick="myFunction_1('Bill Gates', 'CEO')">click here</button>
+    <!--function中传参需要用单引号-->
+</body>
+</html>
+```
+
+---
+
+#### 带返回值的函数
+
+```JavaScript
+function myFunction()
+{
+var x=5;
+return x;
+}
+```
+
+---
+
+## JavaScript运算符
+
+
+
+| 运算符 | 描述              | 例子  | 结果  |
+| ------ | ----------------- | ----- | ----- |
+| +      | 加                | x=y+2 | x=7   |
+| -      | 减                | x=y-2 | x=3   |
+| *      | 乘                | x=y*2 | x=10  |
+| /      | 除                | x=y/2 | x=2.5 |
+| %      | 求余数 (保留整数) | x=y%2 | x=1   |
+| ++     | 累加              | x=++y | x=6   |
+| --     | 递减              | x=--y | x=4   |
+
+| 运算符 | 例子 | 等价于 | 结果 |
+| ------ | ---- | ------ | ---- |
+| =      | x=y  |        | x=5  |
+| +=     | x+=y | x=x+y  | x=15 |
+| -=     | x-=y | x=x-y  | x=5  |
+| *=     | x*=y | x=x*y  | x=50 |
+| /=     | x/=y | x=x/y  | x=2  |
+| %=     | x%=y | x=x%y  | x=0  |
+
+---
+
+```javascript
+x=5+5;
+document.write(x);
+
+x="5"+"5";
+document.write(x);
+
+x=5+"5";    //数字与字符串想加，自动变成字符串   55
+document.write(x);
+
+x="5"+5;
+document.write(x);
+```
+
+
+
+---
+
+## JavaScript比较和逻辑运算符
+
+#### 比较运算符
+
+x = 5
+
+| 运算符 | 描述             | 例子                               |
+| ------ | ---------------- | ---------------------------------- |
+| ==     | 等于             | x==8 为 false                      |
+| ===    | 全等（值和类型） | x===5 为 true；x = = ="5" 为 false |
+| !=     | 不等于           | x!=8 为 true                       |
+| >      | 大于             | x>8 为 false                       |
+| <      | 小于             | x<8 为 true                        |
+| >=     | 大于或等于       | x>=8 为 false                      |
+| <=     | 小于或等于       | x<=8 为 true                       |
+
+---
+
+#### 逻辑运算符
+
+x = 6, y = 3
+
+| 运算符 | 描述 | 例子                       |
+| ------ | ---- | -------------------------- |
+| &&     | and  | (x < 10 && y > 1) 为 true  |
+| \|\|   | or   | (x= =5 \|\| y==5) 为 false |
+| !      | not  | !(x==y) 为 true            |
+
+```javascript
+variablename=(condition)?value1:value2 
+
+greeting=(visitor=="PRES")?"Dear President ":"Dear ";
+```
+
+​        如果变量 visitor 中的值是 "PRES"，则向变量 greeting 赋值 "Dear President "，否则赋值 "Dear"。
+
+
+
+
+
+
+
+
+
 
 
 

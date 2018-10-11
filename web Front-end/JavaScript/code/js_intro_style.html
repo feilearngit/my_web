@@ -4,6 +4,68 @@
 	<title></title>
 </head>
 <body>
+	<script type="text/javascript">
+		function myFunction()
+		{
+			alert("Hello JavaScript");
+		}
+
+		function myFunction_1(name, job)
+		{
+			alert("Welcome" + name + ", the" + job);
+		}
+
+		//if test
+		function goodDay()
+		{
+			var x = "";
+			var time = new Date().getHours();
+			if (time < 14) {
+				x = "Good Day";
+			}
+			else
+			{
+				x = new Date();
+			}
+			document.getElementById("goodDay").innerHTML=x;
+		}
+
+		//switch test
+		function getDay()
+		{
+			var x = "";
+			var time = new Date().getDay();
+			switch(time)
+			{
+				case 0:
+					x = "Today is Sunday";
+					break;
+				case 1:
+					x = "Today is Monday";
+					break;
+				case 2:
+					x = "Today is Tuesday";
+					break;
+				case 3:
+					x = "Today is Wednesday";
+					break;
+				case 4:
+					x = "Today is Thursday";
+					break;
+				case 5:
+					x = "Today is Friday";
+					break;
+				case 6:
+					x = "Today is Saturday";
+					break;
+				default:
+					x = "get out of here, bitch"
+
+			}
+			document.getElementById("goodDay").innerHTML=x;
+		}
+
+	</script>
 <h2>What Can JavaScript Do?</h2>
 <p id="demo">JavaScript can change the style of an HTML element.</p>
 <button type="button" onclick="document.getElementById('demo').style.fontSize='35px'">Click Me!</button>
@@ -11,5 +73,12 @@
 <button type="button" onclick="document.getElementById('demo').style.display='none'">Click Me hide!</button>
 
 <button type="button" onclick="document.getElementById('demo').style.display='block'">Click Me show!</button>
+
+<button onclick="myFunction_1('Bill Gates', 'CEO')">click here</button>
+
+<button onclick="goodDay()">goodDay</button>
+<button onclick="getDay()">getDay</button>
+<p id="goodDay"></p>
+
 </body>
 </html>
