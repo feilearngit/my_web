@@ -516,7 +516,22 @@ greeting=(visitor=="PRES")?"Dear President ":"Dear ";
 
 ​        如果变量 visitor 中的值是 "PRES"，则向变量 greeting 赋值 "Dear President "，否则赋值 "Dear"。
 
+---
 
+## JavaScript循环
+
+#### For/IN循环
+
+for/in循环遍历对象的属性：
+
+```javascript
+var person={fname:"john", lname:"doe", age:25};
+
+for(x in person)
+{
+    txt = txt + person[x];
+}
+```
 
 
 
