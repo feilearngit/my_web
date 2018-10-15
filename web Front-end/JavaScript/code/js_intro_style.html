@@ -65,6 +65,40 @@
 			document.getElementById("goodDay").innerHTML=x;
 		}
 
+		function message()
+		{
+			var text = "";
+			try
+			{
+				adddlert("javascript try-catch");
+			}
+			catch(err)
+			{
+				text = "There was an error on this page. \n\n";
+				text += "Error description: " + err.message + "\n\n";
+				text += "Click OK to continue.\n\n";
+				alert(text);
+			}
+		}
+
+		function throwTest()
+		{
+			var x = document.getElementById("inputNum").value;
+			try
+			{
+				if (x == "") {throw "empty"};
+				if (isNaN(x)) {throw "not a number"};
+				if (x > 10) {throw "too high"};
+				if (x < 5) {throw "too low"};
+			}
+			catch(err)
+			{
+				var y = document.getElementById("mess");
+				y.innerHTML="Error: " + err + ".";
+			}
+
+		}
+
 	</script>
 <h2>What Can JavaScript Do?</h2>
 <p id="demo">JavaScript can change the style of an HTML element.</p>
@@ -78,7 +112,15 @@
 
 <button onclick="goodDay()">goodDay</button>
 <button onclick="getDay()">getDay</button>
+<button onclick="message()">getMessage</button>
 <p id="goodDay"></p>
+
+<p>Please input a number between 5 and 10:</p>
+<input type="text" name="input" id="inputNum">
+<button type="button" onclick="throwTest()">Test Input</button>
+<p id="mess"></p>
+
+
 
 </body>
 </html>

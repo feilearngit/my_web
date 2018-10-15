@@ -533,6 +533,116 @@ for(x in person)
 }
 ```
 
+---
+
+## Break和Continue
+
+break用于跳出循环
+
+continue用于跳过循环中的一个迭代
+
+#### 标签
+
+````html
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+cars=["BMW","Volvo","Saab","Ford"];
+list:
+{
+document.write(cars[0] + "<br>"); 
+document.write(cars[1] + "<br>"); 
+document.write(cars[2] + "<br>"); 
+break list;
+document.write(cars[3] + "<br>"); 
+document.write(cars[4] + "<br>"); 
+document.write(cars[5] + "<br>"); 
+}
+</script>
+
+</body>
+</html>
+
+````
+
+​        通过标签引用，break 语句可用于跳出任何 JavaScript 代码块。
+
+---
+
+## JavaScript错误 - Throw、Try、Catch
+
+try 语句测试代码块的错误
+
+catch语句处理错误
+
+throw语句创建自定义错误
+
+---
+
+#### JavaScript测试和捕捉
+
+```JavaScript
+try
+  {
+  //在这里运行代码
+  }
+catch(err)
+  {
+  //在这里处理错误
+  
+```
+
+---
+
+#### Throw语句
+
+throw语句允许我们创建自定义错误。
+
+创建或抛出异常（exception）。
+
+把throw与try和catch一起使用，可以控制程序流，生成自定义的错误消息。
+
+异常可以是 JavaScript 字符串、数字、逻辑值或对象。
+
+---
+
+## JavaScript表单验证
+
+JavaScript可用来在数据被送往服务器前对HTML表单中的输入数据进行验证。
+
+---
+
+#### JavaScript表单验证
+
+被验证的典型表单数据有：
+
+- 用户是否已填写表单中的必填项目
+- 用户输入的邮件地址是否合法
+- 用户是否已输入合法的日期
+- 用户是否在数据域（numeric field）中输入了文本
+
+---
+
+#### 必填（或必选）项目
+
+假如必填或必选项目为空，弹框警告
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
