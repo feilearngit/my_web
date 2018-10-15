@@ -627,7 +627,45 @@ JavaScript可用来在数据被送往服务器前对HTML表单中的输入数据
 
 #### 必填（或必选）项目
 
-假如必填或必选项目为空，弹框警告
+假如必填或必选项目为空，弹框警告，并且函数返回值为false，否则返回值为true。
+
+```html
+
+<html>
+<head>
+<script type="text/javascript">
+
+function validate_required(field,alerttxt)
+{
+with (field)
+  {
+  if (value==null||value=="")
+    {alert(alerttxt);return false}
+  else {return true}
+  }
+}
+
+function validate_form(thisform)
+{
+with (thisform)
+  {
+  if (validate_required(email,"Email must be filled out!")==false)
+    {email.focus();return false}
+  }
+}
+</script>
+</head>
+
+<body>
+<form action="submitpage.htm" onsubmit="return validate_form(this)" method="post">
+Email: <input type="text" name="email" size="30">
+<input type="submit" value="Submit"> 
+</form>
+</body>
+
+</html>
+
+```
 
 
 

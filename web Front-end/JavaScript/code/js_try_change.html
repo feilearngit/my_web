@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		function openLight()
+		{
+			document.getElementById("light").src="../../material/pic_bulbon.gif";
+		}
+
+		function closeLigth()
+		{
+			document.getElementById("light").src="../../material/pic_bulboff.gif";
+		}
+	</script>
+</head>
+<body>
+
+<img id="light" src="../../material/pic_bulboff.gif">
+<button onclick="openLight()">开灯</button>
+<button onclick="closeLigth()">关灯</button>
+</body>
+</html>
