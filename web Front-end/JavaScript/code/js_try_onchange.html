@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function onchangeTest()
+		{
+			var x = document.getElementById("demo");
+			x.value = x.value.toUpperCase();
+			if (x.value == "TEST") {alert(x.value);}
+			else
+			{
+				alert("ERROR");
+			}
+			
+		}
+	</script>
+	<title></title>
+</head>
+<body>
+please input words：<input type="text" name="test" id="demo" onchange="onchangeTest()">
+</body>
+</html>

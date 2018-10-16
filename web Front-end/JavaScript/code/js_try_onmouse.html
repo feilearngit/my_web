@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		div
+		{
+			background-color: green;
+			width: 120px;
+			height: 20px;
+			padding: 40px;
+			color: #ffffff;
+		}
+
+		
+	</style>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function mOver(obj)
+		{
+			obj.innerHTML="谢谢";
+		}
+
+		function mOut(obj)
+		{
+			obj.innerHTML="把鼠标移至上面";
+		}
+
+		function mDown(obj)
+		{
+			obj.style.background-color="#1ec5e5";
+			obj.innerHTML="请释放鼠标按钮";
+		}
+
+		function mUp(obj)
+		{
+			obj.style.background-color="green";
+			obj.innerHTML="请按下鼠标按钮";
+		}
+
+	</script>
+	<title></title>
+</head>
+<body>
+
+<div style="css1" onmouseover="mOver(this)" onmouseout="mOut(this)">把鼠标移至上面</div>
+<br>
+
+<div style="div2" onmousedown="mDown(this)" onmouseup="mUp(this)">请点击这里</div>
+
+
+</body>
+</html>

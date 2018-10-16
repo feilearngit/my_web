@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<title></title>
 	<script type="text/javascript">
+		
 		function openLight()
 		{
 			document.getElementById("light").src="../../material/pic_bulbon.gif";
@@ -13,6 +14,12 @@
 		{
 			document.getElementById("light").src="../../material/pic_bulboff.gif";
 		}
+
+		function changetext(id)
+		{
+			id.innerHTML="Thank you";
+		}
+
 	</script>
 </head>
 <body>
@@ -20,5 +27,19 @@
 <img id="light" src="../../material/pic_bulboff.gif">
 <button onclick="openLight()">开灯</button>
 <button onclick="closeLigth()">关灯</button>
+
+<h1 onclick="changetext(this)">change text</h1>
+
+<p>click here show time</p>
+<button id="myBtn">show time</button>
+<script type="text/javascript">
+	document.getElementById("myBtn").onclick=function(){showDatetime()}; //绑定事件
+	function showDatetime()
+		{
+			document.getElementById("demo").innerHTML=Date();
+		}
+</script>
+<p id="demo"></p>
+
 </body>
 </html>

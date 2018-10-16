@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+		function changeCss()
+		{
+			document.getElementById("p2").style.color="blue";
+			document.getElementById("p2").style.fontFamily="Arial";
+			document.getElementById("p2").style.fontSize="larger";
+		}
+	</script>
+</head>
+<body>
+	<p id="p1">Hello World!</p>
+	<p id="p2">Hello JavaScript!</p>
+	<button onclick="changeCss()">click here</button>
+	<button onclick="document.getElementById('p1').style.visibility='hidden'">hide</button>
+	<button onclick="document.getElementById('p1').style.visibility='visible'">show</button>
+</body>
+</html>
